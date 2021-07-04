@@ -1,16 +1,31 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
 
 apply plugin: 'java'
+
+mainClassName = 'com.crygier.nodemcu.Main'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'org.luaj:luaj-jse:3.0.1'
-    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+    implementation 'org.luaj:luaj-jse:3.0.1'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.2'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+javafx {
+    version = "11.0.2"
+    modules = [
+            'javafx.base',
+            'javafx.controls',
+            'javafx.fxml',
+            'javafx.graphics',
+            'javafx.media',
+            'javafx.swing',
+            'javafx.web'
+    ]
 }
