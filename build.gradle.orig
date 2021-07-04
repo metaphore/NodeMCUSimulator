@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
+=======
+>>>>>>> prefanatic/master
 apply plugin: 'java'
 
 mainClassName = 'com.crygier.nodemcu.Main'
@@ -17,6 +20,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient:4.5.2'
 }
 
+<<<<<<< HEAD
 javafx {
     version = "11.0.2"
     modules = [
@@ -28,8 +32,12 @@ javafx {
             'javafx.swing',
             'javafx.web'
     ]
+=======
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
 }
 
 task uploadInit(type: Exec) {
     commandLine 'cmd', 'upload.bat'
+>>>>>>> prefanatic/master
 }
